@@ -1,10 +1,10 @@
-% Données issues de : 
+% DonnÃ©es issues de : 
 
 %Didier Piau
 %
-%Université Grenoble Alpes
+%UniversitÃ© Grenoble Alpes
 %Institut Fourier UMR 5582 UGA-CNRS
-%100 rue des Maths, BP 74, 38402 Saint Martin d'Hères 
+%100 rue des Maths, BP 74, 38402 Saint Martin d'HÃ©res 
 %
 %https://www-fourier.univ-grenoble-alpes.fr/~dpiau/enseignement.html
 %
