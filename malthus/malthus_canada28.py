@@ -7,7 +7,7 @@ population = (2.436297, 3.229633, 3.737257, 4.381256, 4.932206, 5.418663, 7.2216
 
 # Plot
 fig, ax = plt.subplots()
-ax.plot(years, np.log(population), marker='*', linestyle='')
+ax.plot(years, np.log(population), marker='+', linestyle='')
 ax.set_title('Population of Canada (1851-2006)')
 ax.set_xlabel('Year')
 ax.set_ylabel('Population (millions)')

@@ -11,8 +11,8 @@ poly1d_fn = np.poly1d(coef)
 
 # Plot
 fig, ax = plt.subplots()
-ax.plot(years, np.log(population), marker='o', linestyle='-')
-ax.plot(years, poly1d_fn(years), '--k')
+ax.plot(years, np.log(population), marker='+', linestyle='')
+ax.plot(years, poly1d_fn(years), '-k')
 ax.set_title('Population of Canada (1851-2006)')
 ax.set_xlabel('Year')
 ax.set_ylabel('Population (millions)')
