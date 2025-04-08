@@ -1,3 +1,5 @@
+# Copyright 2025 BAUVENT Melvyn, GRENIER Lilas, PRIBYLSKI Simon
+
 from logistic_regression import *
 import numpy as np
 import matplotlib.pyplot as plt
