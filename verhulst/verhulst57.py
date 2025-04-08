@@ -21,10 +21,10 @@ poly1d_fn = np.poly1d(coef)
 
 # Plot
 fig, ax = plt.subplots()
-ax.plot(years, population, marker='o', linestyle='-')
+ax.plot(years, population, marker='+', linestyle='')
 tc = np.linspace(min(t), max(t) if anfin is None else anfin, P)
 plt.plot(tc, logistic_function(tc, *popt, t0), label='Modèle de Verhulst')
-ax.plot(years, np.exp(poly1d_fn(years)), label='Modèle de Malthus')
+ax.plot(years, np.exp(poly1d_fn(years)), label='Modèle de Malthus', linestyle='dashed')
 ax.set_title('Population of USA (1790-1950)')
 ax.set_xlabel('Year')
 ax.set_ylabel('Population (millions)')
