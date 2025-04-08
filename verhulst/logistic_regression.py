@@ -7,7 +7,7 @@ def logistic_function(t, K, y0, a, t0):
     return K / (1 + (K / y0 - 1) * np.exp(-a * (t - t0)))
 
 
-def regression_logistique(t, y, modmal=1, P=1000, yc=None, ylabelp='', MaxFunEvals=None, cho=1, iter=0, grap=1,
+def regression_logistique(t, y, modmal=1, P=1000, yc=None, ylabelp='', MaxFunEvals=None, cho=1, iter=0,
                           anfin=None, tansym=0):
     if np.any(y <= 0):
         raise ValueError("Il existe des valeurs négatives ou nulles de y")
@@ -45,16 +45,6 @@ def regression_logistique(t, y, modmal=1, P=1000, yc=None, ylabelp='', MaxFunEva
     resnorm = np.sum((y - logistic_function(t, *popt, t0)) ** 2)
     resnormc = None
     yfin = logistic_function(anfin, *popt, t0) if anfin is not None else None
-
-    if grap:
-        plt.figure()
-        plt.scatter(t, y, label='Données')
-        tc = np.linspace(min(t), max(t) if anfin is None else anfin, P)
-        plt.plot(tc, logistic_function(tc, *popt, t0), label='Modèle de Verhulst')
-        plt.xlabel('Années')
-        plt.ylabel('Population' if not ylabelp else f'Population ({ylabelp})')
-        plt.legend()
-        plt.show()
 
     return K, y0, a, t0, resnorm, resnormc, yfin
 
