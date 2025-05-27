@@ -66,7 +66,7 @@ def rk4n(
     h = (tfinal - t0) / (N - 1)
     tout = np.linspace(t0, tfinal, N)
 
-    y = np.atleast_1d(np.array(y0, dtype=float))  # Assure que y est un tableau float
+    y = np.atleast_1d(np.array(y0, dtype=float))
     yout = np.zeros((N, y.size))
     yout[0, :] = y
 
@@ -139,20 +139,14 @@ def lotka_volterra_complet(a, b, c, d, x0, y0,
     if te is not None:
         tdeb, tfin = te[0], te[-1]
     else:
-        print("la")
-        print("tdeb tfin 1 : ", tdeb, tfin)
         if tdeb is None:
-            print("tdeb is None")
             tdeb = 0
         if tfin is None:
-            print("la 2")
             if lvb and not testpart:
-                print("tdeb Tp : ", tdeb, Tp)
                 tfin = tdeb + Tp
             else:
                 raise ValueError("tfin non défini")
 
-    print("tfin tdeb :", tfin, tdeb)
     N = int(np.ceil((tfin - tdeb) / h))
     T = np.linspace(tdeb, tfin, N)
 
@@ -310,8 +304,7 @@ def lotka_volterra_bis(
     eqcomp: Optional[str] = None,
     chmax: int = 15
 ):
-    print("tdeb : ", tdeb)
-    
+
     # Handle defaults
     if seuil is None:
         seuil = -np.inf
@@ -347,12 +340,10 @@ def lotka_volterra_bis(
 
     # Single case
     if p == 1:
-        print("LAAAAAA")
-        Tl, Xcl, Ycl, er, Tp, erTp = lotka_volterra_complet(
+        Tl, Xcl, Ycl, er, Tp, erTp, _ = lotka_volterra_complet(
             at[0], bt[0], ct[0], dt[0], x0t[0], y0t[0],
             tdeb, tfin, seuilt[0], Kt[0], te, xe, ye
         )
-        print("LAAAAAAA 2")
         print('erreur schéma:', er)
         if not np.isnan(erTp):
             print('éventuelle erreur période:', erTp)
