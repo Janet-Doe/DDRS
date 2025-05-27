@@ -56,22 +56,30 @@ def periode_lotka_volterra(
     er = np.max(errs)
     return T, er
 
-def rk4n(f, t_span, y0, N):
-    t0, tf = t_span
-    h = (tf - t0) / N
-    t = np.linspace(t0, tf, N + 1)
-    y = np.zeros((N + 1, len(y0)))
-    y[0] = y0
+def rk4n(
+    FunFcn: Callable[[float, np.ndarray], np.ndarray],
+    tspan: Tuple[float, float],
+    y0: Union[np.ndarray, Sequence[float]],
+    N: int = 100
+) -> Tuple[np.ndarray, np.ndarray]:
+    t0, tfinal = tspan
+    h = (tfinal - t0) / (N - 1)
+    tout = np.linspace(t0, tfinal, N)
 
-    for i in range(N):
-        k1 = f(t[i], y[i])
-        print("k1 : ", k1)
-        k2 = f(t[i] + h / 2, y[i] + h / 2 * k1)
-        k3 = f(t[i] + h / 2, y[i] + h / 2 * k2)
-        k4 = f(t[i] + h, y[i] + h * k3)
-        y[i + 1] = y[i] + h / 6 * (k1 + 2 * k2 + 2 * k3 + k4)
+    y = np.atleast_1d(np.array(y0, dtype=float))  # Assure que y est un tableau float
+    yout = np.zeros((N, y.size))
+    yout[0, :] = y
 
-    return t, y
+    for k in range(1, N):
+        t = tout[k-1]
+        s1 = np.atleast_1d(FunFcn(t, y))
+        s2 = np.atleast_1d(FunFcn(t + h/2, y + h*s1/2))
+        s3 = np.atleast_1d(FunFcn(t + h/2, y + h*s2/2))
+        s4 = np.atleast_1d(FunFcn(t + h, y + h*s3))
+        y = y + (h/6)*(s1 + 2*s2 + 2*s3 + s4)
+        yout[k, :] = y
+
+    return tout, yout
 
 def erreur(Xc, Yc, h, a, b, c, d, K, seuil, casrk4):
     if casrk4:
