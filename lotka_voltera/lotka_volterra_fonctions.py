@@ -221,7 +221,7 @@ def lotka_volterra_complet(a: Union[float, Sequence[float]], b, c, d, x0, y0,
         plt.legend()
         plt.title("Évolution temporelle")
         plt.grid(True)
-        plt.show()
+        #plt.show()
 
     return T, Xc, Yc, er, Tp, erTp, equ
 
@@ -232,8 +232,7 @@ def trace_multi_cycle(
     equ: Optional[Union[Sequence[float], Sequence[Sequence[float]]]] = None,
     cylog: int = 0,
     ch: Optional[Sequence[str]] = None,
-    title: str = None,
-    labels = []
+    title: str = None
 ) -> None:
     
     Nt = len(Xc)
@@ -280,8 +279,8 @@ def trace_multi_cycle(
             plt.plot([x0], [y0], '*', color=colors[i])
     # Legend if labels provided
     if ch:
+        labels = []
         if q == 1:
-            labels.append('Equilibre commun')
             labels.extend(ch)
         else:
             labels = ch
@@ -401,5 +400,5 @@ def lotka_volterra_bis(
                 ch.append(', '.join(parts))
 
     # Plot multi-cycle
-    trace_multi_cycle(Xc, Yc, equ, title=None, labels=ch)
+    trace_multi_cycle(Xc, Yc, equ, title="Schéma des populations proies/prédateurs", ch=ch)
     return Xc, Yc, equ
