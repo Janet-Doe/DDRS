@@ -1,3 +1,5 @@
+# Copyright 2025 BAUVENT Melvyn, GRENIER Lilas, PRIBYLSKI Simon
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import root_scalar
@@ -116,7 +118,7 @@ def erreur(Xc, Yc, h, a, b, c, d, K, seuil, casrk4):
 
         return max(erx, ery)
 
-def lotka_volterra_complet(a, b, c, d, x0, y0,
+def lotka_volterra_complet(a: Union[float, Sequence[float]], b, c, d, x0, y0,
                            tdeb=None, tfin=None, seuil=-np.inf, K=np.inf,
                            te=None, xe=None, ye=None,
                            casrk4=1, h=1e-3,
@@ -146,6 +148,9 @@ def lotka_volterra_complet(a, b, c, d, x0, y0,
                 tfin = tdeb + Tp
             else:
                 raise ValueError("tfin non défini")
+
+    if tdeb == []:
+        tdeb = 0
 
     N = int(np.ceil((tfin - tdeb) / h))
     T = np.linspace(tdeb, tfin, N)
@@ -207,7 +212,7 @@ def lotka_volterra_complet(a, b, c, d, x0, y0,
         plt.plot(T, Yc, label="Prédateurs")
         if traceeq and equ is not None:
             plt.axhline(y=equ[0], linestyle='--', color='red')
-            plt.axhline(y=equ[1], linestyle='--', color='blue')
+            plt.axhline(y=equ[1], linestyle='- -', color='blue')
         if te is not None and xe is not None and ye is not None:
             plt.plot(te, xe, 'ro', label="Proies (mesurées)")
             plt.plot(te, ye, 'bo', label="Prédateurs (mesurés)")
@@ -226,7 +231,9 @@ def trace_multi_cycle(
     Yc: Sequence[Sequence[float]],
     equ: Optional[Union[Sequence[float], Sequence[Sequence[float]]]] = None,
     cylog: int = 0,
-    ch: Optional[Sequence[str]] = None
+    ch: Optional[Sequence[str]] = None,
+    title: str = None,
+    labels = []
 ) -> None:
     
     Nt = len(Xc)
@@ -273,7 +280,6 @@ def trace_multi_cycle(
             plt.plot([x0], [y0], '*', color=colors[i])
     # Legend if labels provided
     if ch:
-        labels = []
         if q == 1:
             labels.append('Equilibre commun')
             labels.extend(ch)
@@ -281,6 +287,7 @@ def trace_multi_cycle(
             labels = ch
         plt.legend(labels, loc='best')
 
+    plt.title(title)
     plt.xlabel('effectifs des proies')
     plt.ylabel('effectifs des prédateurs')
     plt.tight_layout()
@@ -370,7 +377,7 @@ def lotka_volterra_bis(
         Tl, Xcl, Ycl, er, Tp, erTp, equl = lotka_volterra_complet(
             ai, bi, ci, di, xi, yi,
             tdeb, tfin, si, Ki, te, xe, ye,
-            return_cycles=True, return_equ=True
+            #return_cycles=True, return_equ=True
         )
         print('erreur schéma:', er)
         if not np.isnan(erTp):
