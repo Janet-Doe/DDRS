@@ -79,3 +79,16 @@ Le seul point d'équilibre possible est donc le point $(\frac{c}{d}, \frac{a}{b}
 
 #### Partie 2
 
+Le centre du schéma (point d'équilibre) est donc le point de croisement des axes (min-max) de x et (min-max) de y.
+
+On cherche à garder le même point d'équilibre $(\frac{c}{d}, \frac{a}{b})$ en changeant les paramètres : 
+
+#### Partie 3
+
+Si le paramètre `a` varie, 
+
+`x` : nombre de proies dans la population  
+`y` : nombre de prédateurs dans la population  
+`a` : taux de croissance des proies. Si a croit, la moyenne de population de proies reste la même, mais la moyenne de population de prédateurs croît.  Voir schéma.  
+`c` :   
+`b` = `d` :  efficacité de la prédation. 
