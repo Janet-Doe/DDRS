@@ -337,6 +337,49 @@ Schéma 9 :  trajectoire dans le plan de phase selon x0 et y0
 
 #### Modèle sans herbe
 
+Sans herbe, les trois cas de figure sont : 
+- cas (a) : Les loups disparaissent et les moutons se multiplient jusqu'à envahir la Terre.
+- cas (b) : Les loups mangent tous les moutons, puis meurent tous par manque de nourriture.
+- cas (c) : Les loups mangent et se reproduisent trop lentement pour amortir la croissance de la population de moutons, qui explose exponentiellement malgré la présence de loups.
+
+Schéma 10 : cas de figure (a)     
+[![Netlog - disparition des loups et croissance des moutons](img\netlog_sheepocalypse.png)](img\netlog_sheepocalypse.png)
+
+Schéma 11 : cas de figure (b)  
+[![Netlog - disparition des moutons et disparition des loups](img\netlog_sheepdeath_wolfdeath.png)](img\netlog_sheepdeath_wolfdeath.png)
+
+En modifiant les paramètres du programme, nous avons tenté d'atteindre un cycle de prédation stable, comme celui du modèle de Lotka-Voltera, sans y parvenir. Dans le meilleur des résultats obtenus, illustrés ci-dessous deux périodes à peu près identiques se sont produites, mais lors de la troisième le nombre de moutons a beaucoup augmenté, suivi par le nombre de loups, et nous sommes retombé dans le cas de figure (b).
+
+Schéma 12 : résultat le plus proche du modèle de Lotka-Voltera  
+[![Netlog - résultat le plus proche du modèle de Lotka-Voltera](img\netlog_almost_stable.png)](img\netlog_almost_stable.png)
+
+> En cas de mauvais affichage, voir les fichiers [netlog_sheepocalypse.png](img\netlog_sheepocalypse.png), [netlog_sheepdeath_wolfdeath.png](img\netlog_sheepdeath_wolfdeath.png), [netlog_almost_stable.png](img\netlog_almost_stable.png) dans le dossier [img](img/).
+
+
+
 #### Modèle avec herbe
 
+Quand l'on rajoute une population supplémentaire, l'herbe, le modèle se stabilise.
+
+Schéma 12 : modèle de prédation stable  
+[![Netlog - modèle satble avec herbe](img\netlog_stable_with_grass.png)](img\netlog_stable_with_grass.png)
+
+> En cas de mauvais affichage, voir le fichier [netlog_stable_with_grass.png](img\netlog_stable_with_grass.png)  dans le dossier [img](img/).
+
+De plus, même si l'on initialise la population de loup à 0, les populations de moutons et d'herbes restent dans un état stables l'une par rapport à l'autre. Cela peut s'expliquer par le fait que l'herbe ne peut pas disparaitre entièrement 
+
+
 ### Modèle "docked hybrid"
+
+Comparaison des résultats :
+
+- Côté équation différentielle : le comportement de la population suit une courbe lissée, prévisible, avec des changements continus dans le temps, comme on l’avait déjà observé dans la question 1. On y retrouve les effets classiques des modèles comme Lotka-Volterra ou logistique (selon le modèle choisi).
+- Côté multi-agent : les résultats montrent davantage de variabilité, avec des fluctuations dues aux interactions individuelles entre agents. On voit par exemple des légers décalages ou des pics locaux dans la population qui ne sont pas visibles dans le modèle équationnel.
+
+Dans la question 1, on comparait un modèle System Dynamics pur (basé uniquement sur des équations différentielles) à un modèle multi-agent indépendant. On observait déjà que le modèle multi-agent apportait une vision plus détaillée des comportements individuels, avec des résultats plus bruités.
+
+Avec le modèle docked hybrid, la différence est plus flagrante car les deux types de modélisation sont couplés dans un même environnement. Cela met en évidence :
+- Les limites du modèle équationnel pour capturer les variations locales ou aléatoires.
+- La richesse du modèle multi-agent pour représenter des comportements individuels qui peuvent impacter la dynamique globale.  
+
+En résumé, le modèle "docked hybrid" permet de mieux visualiser la complémentarité entre les deux approches, et montre que la modélisation multi-agent peut révéler des phénomènes que le modèle différentiel seul ne mettrait pas en évidence.
