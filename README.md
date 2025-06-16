@@ -366,7 +366,7 @@ Schéma 12 : modèle de prédation stable
 
 > En cas de mauvais affichage, voir le fichier [netlog_stable_with_grass.png](img\netlog_stable_with_grass.png)  dans le dossier [img](img/).
 
-De plus, même si l'on initialise la population de loup à 0, les populations de moutons et d'herbes restent dans un état stables l'une par rapport à l'autre. Cela peut s'expliquer par le fait que l'herbe ne peut pas disparaitre entièrement 
+De plus, même si l'on initialise la population de loup à 0, les populations de moutons et d'herbes restent dans un état stables l'une par rapport à l'autre. Cela peut s'expliquer par le mode de reproduction différent entre les moutons et l'herbe, comme le fait que l'herbe ne peut pas disparaitre entièrement 
 
 
 ### Modèle "docked hybrid"
