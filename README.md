@@ -121,7 +121,7 @@ $$
 \forall C \in \mathbb{R}, \quad v(t) = C e^{-a(t - t_0)} + \frac{1}{K}
 $$
 
-Il est l'heure de trouver C 🤓
+Il est l'heure de trouver C
 
 $$
 \frac{1}{N(t_0)} = \frac{1}{N_0} = v(t_0)=Ce ^ {-a(t_0-t_0)} + \frac{1}{K}
@@ -133,15 +133,15 @@ $$
 C + \frac{1}{K} = \frac{1}{N_0} \iff C = \frac{1}{N_0} - \frac{1}{K}
 $$
 
-Ainsi 👁️‍🗨️
+Ainsi
 
 $$
 v(t)=(\frac{1}{N_0} - \frac{1}{K})e ^ {-a(t-t_0)}+\frac{1}{K}
 $$
 
-Et donc au final 🔥
+Et donc au final
 
-#### 2b(iv) 🧮
+#### 2b(iv)
 
 $$
 N(t)= \frac{1}{v(t)}=\frac{1}{(\frac{1}{N_0} - \frac{1}{K})e ^ {-a(t-t_0)}+\frac{1}{K}}=\frac{K}{1+(\frac{K}{N_0}-1)e ^ {-a(t-t_0)}}
@@ -179,7 +179,7 @@ $$
     = \frac{a (K - N(t))}{K}
 $$
 
-trivialement 🙈
+trivialement
 
 ## Modèle de Lotka-Voltera
 Voir le code [ici](lotka_voltera).
@@ -273,10 +273,10 @@ $$
 
 Les graphes obtenus à partir de ces valeurs sont les suivants :
 
-Schéma 1 : conditions initiales  
+Schéma 1 : évolution temporelle sous conditions initiales  
 [![Schéma 1, conditions initiales](img/conditions_slides1.png)](img/conditions_slides1.png)
 
-Schéma 2 : conditions initiales  
+Schéma 2 : trajectoire dans le plan de phase conditions initiales  
 [![Schéma 2, conditions initiales](img/conditions_slides2.png)](img/conditions_slides2.png)
   
 > En cas de mauvais affichage, voir les fichiers [conditions_slides1.png](img/conditions_slides1.png) et [conditions_slides2.png](img/conditions_slides2.png) dans le dossier [img](img/).
@@ -284,7 +284,7 @@ Schéma 2 : conditions initiales
 #### Variation de a : 
 De la même manière, mais la moyenne de population de prédateurs croît.  
 
-Schéma 3 : Schéma des tests de variation de a  
+Schéma 3 : trajectoire dans le plan de phase selon a  
 [![Schéma des tests de variation de a](img/test_a.png)](img/test_a.png)
 
 > En cas de mauvais affichage, voir [test_a.png](img/test_a.png) dans le dossier [img](img/).
@@ -293,7 +293,7 @@ Schéma 3 : Schéma des tests de variation de a
 
 Voir schéma, pour les valeurs $b = d = [1, 1.5, 2, 2.5, 3] * 10^{-5} $ :
 
-Schéma 4 : Schéma des tests de variation de b = d
+Schéma 4 :  trajectoire dans le plan de phase selon b = d
 [![Schéma des tests de variation de c](img/test_bd.png)](img/test_bd.png)
 
 > En cas de mauvais affichage, voir [test_bd.png](img/test_bd.png) dans le dossier [img](img/).
@@ -302,16 +302,16 @@ Schéma 4 : Schéma des tests de variation de b = d
 
 Voir schéma, pour les valeurs $c = [1, 2, 3, 4, 5]$ :
 
-Schéma 5 : Schéma des tests de variation de c  
+Schéma 5 :  trajectoire dans le plan de phase selon c  
 [![Schéma des tests de variation de c](img/test_c.png)](img/test_c.png)
 
-> En cas de mauvais affichage, voir [[test_c.png](img/test_c.png" dans le dossier [img](img/).
+> En cas de mauvais affichage, voir [test_c.png](img/test_c.png) dans le dossier [img](img/).
 
 #### Variation simultanée de a et c : 
 
 On peut également faire varier les paramètres a et c simultanément.
 
-Schéma 6 : Schéma des tests de variation de a et c
+Schéma 6 :  trajectoire dans le plan de phase selon a et c
 [![Schéma des tests de variation de  a et c](img/test_ac.png)](img/test_ac.png)
 
 > En cas de mauvais affichage, voir [test_ac.png](img/test_ac.png) dans le dossier [img](img/).
@@ -321,21 +321,22 @@ Schéma 6 : Schéma des tests de variation de a et c
 En modifiant simultanément les valeurs iniales, on obtient un schéma de forme similaire, de même point d'équilibre (puisque $x_0$ et $y_0$ n'entrent pas en compte dans le calcul du point d'équilibre tant qu'ils sont >0) mais d'envergure différente.  
 Schéma pour valeurs $x_0 = y_0 = [1, 2, 3, 4, 5]$ :
 
-Schéma 7 : Schéma des tests de variation de x0   
+Schéma 7 :  trajectoire dans le plan de phase selon x0   
 [![Schéma des tests de variation de x0](img/test_x0.png)](img/test_x0.png)
 
-Schéma 8 : Schéma des tests de variation de y0  
+Schéma 8 :  trajectoire dans le plan de phase selon y0  
 [![Schéma des tests de variation de y0](img/test_y0.png)](img/test_y0.png)
 
-Schéma 9 : Schéma des tests de variation de x0 et y0   
+Schéma 9 :  trajectoire dans le plan de phase selon x0 et y0   
 [![Schéma des tests de variation de x0 et y0](img/test_x0y0.png)](img/test_x0y0.png)
 
  
 > En cas de mauvais affichage, voir les fichiers [test_x0.png](img/test_x0.png), [test_y0.png](img/test_y0.png), [test_x0y0.png](img/test_x0y0.png) dans le dossier [img](img/).
 
+### Modèle "Wolf Sheep Predation"
 
-#### Conservation du point d'équilibre
+#### Modèle sans herbe
 
+#### Modèle avec herbe
 
-/todo  
-On cherche à garder le même point d'équilibre $(\frac{c}{d}, \frac{a}{b})$ en changeant les paramètres : 
+### Modèle "docked hybrid"
