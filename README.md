@@ -371,15 +371,4 @@ De plus, même si l'on initialise la population de loup à 0, les populations de
 
 ### Modèle "docked hybrid"
 
-Comparaison des résultats :
-
-- Côté équation différentielle : le comportement de la population suit une courbe lissée, prévisible, avec des changements continus dans le temps, comme on l’avait déjà observé dans la question 1. On y retrouve les effets classiques des modèles comme Lotka-Volterra ou logistique (selon le modèle choisi).
-- Côté multi-agent : les résultats montrent davantage de variabilité, avec des fluctuations dues aux interactions individuelles entre agents. On voit par exemple des légers décalages ou des pics locaux dans la population qui ne sont pas visibles dans le modèle équationnel.
-
-Dans la question 1, on comparait un modèle System Dynamics pur (basé uniquement sur des équations différentielles) à un modèle multi-agent indépendant. On observait déjà que le modèle multi-agent apportait une vision plus détaillée des comportements individuels, avec des résultats plus bruités.
-
-Avec le modèle docked hybrid, la différence est plus flagrante car les deux types de modélisation sont couplés dans un même environnement. Cela met en évidence :
-- Les limites du modèle équationnel pour capturer les variations locales ou aléatoires.
-- La richesse du modèle multi-agent pour représenter des comportements individuels qui peuvent impacter la dynamique globale.  
-
-En résumé, le modèle "docked hybrid" permet de mieux visualiser la complémentarité entre les deux approches, et montre que la modélisation multi-agent peut révéler des phénomènes que le modèle différentiel seul ne mettrait pas en évidence.
+Le modèle à équation différentielle donne une évolution lisse et prévisible de la population, tandis que le modèle multi-agent montre plus de variabilité, avec des fluctuations et des décalages dus aux interactions individuelles
