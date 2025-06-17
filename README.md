@@ -39,21 +39,30 @@ $$
 #### 1b
 
 $$
-    \text{Pour r > 0 :} \lim_{x \to +\infty} N(t) = +\infty\\
-    \text{Pour r < 0 :} \lim_{x \to +\infty} N(t) = 0
+    \begin{cases}
+        \text{Pour r > 0 :} \underset{x \to +\infty}{\lim} N(t) = +\infty\\
+        \text{Pour r < 0 :} \underset{x \to +\infty}{\lim} N(t) = 0
+    \end{cases}
 $$
 
 $$
-    N(t) > 0\\
-    \text{Pour r > 0 : } N'(t) = rN(t) > 0\\
-    \text{Pour r < 0 : } N'(t) = rN(t) < 0
+    N(t) > 0
+$$
+
+$$
+    \begin{cases}
+        \text{Pour r > 0 : } N'(t) = rN(t) > 0\\
+        \text{Pour r < 0 : } N'(t) = rN(t) < 0
+    \end{cases}
 $$
 
 #### 1c
 
 $$
-    \tau(t)=\frac{N(t+h)-N(t)}{h}\frac{1}{N(t)}\\
-    \lim_{h \to 0} \tau(t) = \frac{N'(t)}{N(t)} = r
+    \begin{array}{rl}
+        \tau(t)=\frac{N(t+h)-N(t)}{h}\frac{1}{N(t)}\\
+        \underset{h \to 0}{\lim} = \frac{N'(t)}{N(t)} = r
+    \end{array}
 $$
 
 #### 2a
@@ -170,16 +179,6 @@ N(t) \underset{+\infty }{\sim} \frac{K}{1+0} = K
 $$
 
 #### 2b(v) (C)
-<!-- 
-\begin{array}{rl}
-\text{On suppose que } N(t) > 0,\\ \text{on pose } v &= \frac{1}{N} \\
-v' + av &= \left(\frac{1}{N}\right)' + \frac{1}{N} \\
-        &= \frac{-N}{N^2} \\
-        &= \frac{-aN\left(1 - \frac{N}{K}\right)}{N^2} + \frac{a}{N} \\
-        &= \frac{-a\left(1 - \frac{N}{K}\right)}{N} + \frac{a}{N} \\
-        &= \frac{a\left(\frac{N}{K}\right)}{N} \\
-        &= \frac{a}{K}
-\end{array} -->
 
 $$
     \tau(t)= \frac{N(t+h)-N(t)}{h}\frac{1}{N(t)}\\
@@ -391,9 +390,9 @@ Schéma 12 : modèle de prédation stable
 
 > En cas de mauvais affichage, voir le fichier [netlog_stable_with_grass.png](img/netlog_stable_with_grass.png)  dans le dossier [img](img/).
 
-De plus, même si l'on initialise la population de loup à 0, les populations de moutons et d'herbes restent dans un état stables l'une par rapport à l'autre. Cela peut s'expliquer par le mode de reproduction différent entre les moutons et l'herbe, comme le fait que l'herbe ne peut pas disparaitre entièrement 
+De plus, même si l'on initialise la population de loup à 0, les populations de moutons et d'herbes restent dans un état stables l'une par rapport à l'autre. Cela peut s'expliquer par le mode de reproduction différent entre les moutons et l'herbe, comme le fait que l'herbe ne peut pas disparaitre entièrement.
 
 
 ### Modèle "docked hybrid"
 
-Le modèle à équation différentielle donne une évolution lisse et prévisible de la population, tandis que le modèle multi-agent montre plus de variabilité, avec des fluctuations et des décalages dus aux interactions individuelles
+Le modèle à équation différentielle donne une évolution lisse et prévisible de la population, tandis que le modèle multi-agent montre plus de variabilité, avec des fluctuations et des décalages dûs aux interactions individuelles.
